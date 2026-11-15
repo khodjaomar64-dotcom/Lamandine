@@ -275,12 +275,30 @@ h2 {
 /* ---------- cover ---------- */
 .sheet.wood {
     color: var(--foil);
-    background-color: var(--wood);
-    background-image:
-        var(--glitter),
-        repeating-linear-gradient(98deg, rgba(0, 0, 0, .12) 0 2px, transparent 2px 7px),
-        linear-gradient(150deg, var(--wood-hi), var(--wood));
-    background-size: 180px 180px, auto, auto;
+background:
+        repeating-linear-gradient(90deg,
+            rgba(90, 55, 25, 0.08) 0px,
+            rgba(90, 55, 25, 0.08) 2px,
+            transparent 2px,
+            transparent 8px),
+
+        repeating-linear-gradient(170deg,
+            rgba(60, 35, 15, 0.12) 0px,
+            rgba(60, 35, 15, 0.12) 3px,
+            transparent 3px,
+            transparent 18px),
+
+        linear-gradient(135deg,
+            #a56b3d,
+            #7a4d28 45%,
+            #5c371d 100%);
+
+    background-size:
+        200px 200px,
+        300px 300px,
+        cover;
+
+    background-blend-mode: multiply, soft-light, normal;
 }
 
 .panes {
@@ -290,7 +308,11 @@ h2 {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: minmax(0, .95fr) auto minmax(0, 1fr) minmax(0, 1fr);
     gap: 8px;
+    /* remove gaps */
     overflow: hidden;
+/* wood frame */
+    background: linear-gradient(135deg, #8b5a2b, #5c371d);
+    padding: 10px;
     border-radius: calc(var(--leaf-w) / 2 - 14px) calc(var(--leaf-w) / 2 - 14px) 6px 6px;
 }
 
@@ -300,7 +322,7 @@ h2 {
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 12px;
     filter: saturate(1.2) contrast(1.1);
 }
 
